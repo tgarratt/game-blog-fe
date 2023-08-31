@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dark .primary-block {
+    background-color: rgb(29, 29, 29);
+}
+
+.dark .primary-block .text {
+    color: white;
+}
+
+.dark .secondary-block {
+    background-color: white;
+}
+
+.dark .secondary-block .text {
+    color: rgb(29, 29, 29);
+}
+
+.light .primary-block {
+    background-color: white;
+}
+
+.light .primary-block .text {
+    color: rgb(29, 29, 29);
+}
+
+.light .secondary-block {
+    background-color: rgb(29, 29, 29);
+}
+
+.light .secondary-block .text {
+    color: white;
+}

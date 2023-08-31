@@ -8,7 +8,9 @@ import {
 
 import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './components';
+import Home from './components/Home/Home';
+import Nav from './components/Global/Nav';
+import Footer from './components/Global/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
