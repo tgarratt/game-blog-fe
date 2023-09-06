@@ -17,7 +17,7 @@ function CurrentFavourite() {
     });
 
   return (
-    <ContentBlock blockType={'secondary'} header={'Current Favourite'} queryData={query} />
+    <ContentBlock blockType={'secondary'} header={'Current Favourite'} queryData={query} firstBlockSize={100} />
   );
 }
 

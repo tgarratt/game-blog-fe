@@ -6,6 +6,8 @@ import Search from './Search';
 import Popular from './Popular';
 import CurrentFavourite from './CurrentFavourite';
 import Footer from '../Global/Footer';
+import Welcome from './Welcome';
+
 
 
 function Home() {
@@ -24,7 +26,8 @@ function Home() {
 
   return (
     <div className={`${theme}`}>
-      <Nav toggleTheme={toggleTheme} />
+      <Nav toggleTheme={toggleTheme} theme={theme} />
+      <Welcome theme={theme} />
       <Recent />
       <Popular />
       <CurrentFavourite />

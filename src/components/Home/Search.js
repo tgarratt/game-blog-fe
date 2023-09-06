@@ -26,7 +26,7 @@ function Search() {
 
   return (
     <>
-    <ContentBlock blockType={'primary'} header={'Search'} queryData={query}>
+    <ContentBlock blockType={'primary'} header={'Search'} queryData={query} direction={'col'}>
     <input placeholder='Search...' className='border-2' value={search} onChange={handleInputChange}/>
     </ContentBlock>
     </>
