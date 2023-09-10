@@ -4,7 +4,7 @@ import { useQuery } from "react-query";
 import axios from "axios";
 
 import { getCurrentFavouriteGame } from "../../api/api";
-import ContentBlock from '../Global/ContentBlock';
+import SpotlightBlock from '../Global/SpotlightBlock';
 
 
 function CurrentFavourite() {
@@ -17,7 +17,7 @@ function CurrentFavourite() {
     });
 
   return (
-    <ContentBlock blockType={'secondary'} header={'Current Favourite'} queryData={query} firstBlockSize={100} />
+    <SpotlightBlock blockType={'secondary'} isLoading={query.isLoading} isSuccess={query.isSuccess} game={query.data?.data[0]} />
   );
 }
 

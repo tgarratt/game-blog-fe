@@ -18,7 +18,7 @@ function Recent() {
   
 
   return (
-    <ContentBlock blockType={'primary'} header={'Recent Posts'} queryData={query} firstBlockSize={60} />
+    <ContentBlock blockType={'primary'} queryData={query} firstBlockSize={60} />
   );
 }
 

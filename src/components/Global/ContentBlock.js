@@ -1,13 +1,32 @@
 import React from "react";
+import { styled } from 'styled-components';
+
 import Timer from "../Icons/Timer";
 
+
+
+const GamePreview = styled.div`
+min-height: 36rem;
+width: ${props => props.previewSize }%;
+@media (max-width: 1023px) {
+  width: 100%;
+}
+@media (max-width: 767px) {
+  min-height: 20rem;
+}
+` 
+
+const ImgContainer = styled.div`
+height: 25rem;
+@media (max-width: 767px) {
+  height: 15rem;
+}
+` 
 
 function ContentBlock({
   blockType,
   header,
   queryData,
-  children,
-  direction = 'row',
   firstBlockSize
 }) {
 
@@ -18,50 +37,53 @@ function ContentBlock({
 
   }
 
-
   return (
-    <div className={`${blockType}-block`} style={{minHeight: '35rem'}}>
-      <h2 className='text-3xl font-bold uppercase text' style={{marginBottom: '1rem'}}>{header}</h2>
-      {children}
+    <div className={`${blockType}-block`}>
+      {header &&
+        <div className="flex flex-col md:flex-row mb-8">
+          <h2 className="text-4xl font-bold uppercase text">{header}</h2>
+          <div className="text md:ml-auto mt-2 md:mt-0">More Reviews --</div>
+        </div>
+      }
       {queryData.isLoading && <p className="text">Loading...</p>}
-      <div className={`flex ${direction === 'col' ? 'flex-col' : ''}`}>
+      <div className="flex flex-col lg:flex-row mb-1 lg:mb-20">
       {queryData.isSuccess && queryData.data.data.map(
         (game, key) => {
 
-          const previewLength = key === 0 ? firstBlockSize : 100 - firstBlockSize;
+          const previewSize = key === 0 ? firstBlockSize : 100 - firstBlockSize;
 
-          return (<div key={key} className="mx-2" style={{height: '36rem', width: key === 0 ? `${firstBlockSize}%` : `${100 - firstBlockSize}%`}}>
-          <div className="overflow-auto rounded-lg" style={{height: '25rem'}}>
-            <img style={{height: '100%', width: '100%'}} className="object-cover" src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
-          </div>
-          <div  className='text'>
-              <div className="flex items-center justify-end pt-1">
-              <p className="text-xs pr-1">
-              {calculateReadTime(game.attributes['reviewText'])} min read
-              </p>
-              <Timer fillColour={calculateReadTime(game.attributes['reviewText']) > 2 ? '#2D99D1' : '#29D18A'} />
+          return (
+          <GamePreview key={key} className="mx-0 lg:mx-2 my-4 lg:my-0" previewSize={previewSize}>
+            <ImgContainer className="overflow-auto rounded-xl">
+              <img className="object-cover h-full w-full" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+            </ImgContainer>
+            <div className="text">
+                <div className="flex flex-col md:flex-row justify-between mt-2">
+                  <h3 className="text-lg md:text-3xl capitalize mb-1 md:mb-6" style={{maxWidth: '80%'}}>
+                    {game.attributes['name']}
+                  </h3>
+                  <div className="flex pt-1">
+                    <p className="text-xs pr-1">
+                      {calculateReadTime(game.attributes['reviewText'])} minute read
+                    </p>
+                    <Timer fillColour={calculateReadTime(game.attributes['reviewText']) > 2 ? '#2D99D1' : '#29D18A'} />
+                  </div>
               </div>
-              <div className="flex justify-between">
-              <h3 className="text-3xl capitalize mb-4">
-              {game.attributes['name']}
-              </h3>
+              <div className="hidden md:block">
+                <p className="w-4/5 text-sm mb-1 lg:mb-6">
+                  {game.attributes['reviewText'].substring(0, previewSize * 3)}...
+                </p>
+              </div>
+              <div className="flex">
+                {game.attributes.categories.data.map(
+                  (category, key) => (
+                    <div key={key} className="text-xs mt-4 mr-2 rounded-lg w-fit px-2" style={{border: `1px ${category.attributes.colour} solid`}}>{category.attributes.name}</div>
+                  )
+                )}
+              </div>
             </div>
-            <div>
-              <p className="w-4/5 text-sm">
-                {game.attributes['reviewText'].substring(0, previewLength * 3)}...
-              </p>
-            </div>
-            <div className="flex">
-              {game.attributes.categories.data.map(
-                (category, key) => {
-                  const categoryName = category.attributes.name;
-                 return (<div key={key} className={`text-xs mt-4 mr-2 ${categoryName}`} style={{border: `1px ${category.attributes.colour} solid`, borderRadius: '15px', width: 'fit-content', padding: '0rem 0.5rem'}}>{categoryName}</div>)
-                }
-              )}
-            </div>
-        </div>
-        </div>)
-
+          </GamePreview>
+          )
         }
       )}
       </div>
