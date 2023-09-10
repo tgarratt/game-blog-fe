@@ -17,7 +17,7 @@ function CurrentFavourite() {
     });
 
   return (
-    <SpotlightBlock blockType={'secondary'} isLoading={query.isLoading} isSuccess={query.isSuccess} game={query.data?.data[0]} />
+    <SpotlightBlock blocktype={'secondary'} isLoading={query.isLoading} isSuccess={query.isSuccess} game={query.data?.data[0]} />
   );
 }
 

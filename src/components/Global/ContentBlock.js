@@ -7,7 +7,7 @@ import Timer from "../Icons/Timer";
 
 const GamePreview = styled.div`
 min-height: 36rem;
-width: ${props => props.previewSize }%;
+width: ${props => props.previewsize }%;
 @media (max-width: 1023px) {
   width: 100%;
 }
@@ -24,7 +24,7 @@ height: 25rem;
 ` 
 
 function ContentBlock({
-  blockType,
+  blocktype,
   header,
   queryData,
   firstBlockSize
@@ -38,7 +38,7 @@ function ContentBlock({
   }
 
   return (
-    <div className={`${blockType}-block`}>
+    <div className={`${blocktype}-block`}>
       {header &&
         <div className="flex flex-col md:flex-row mb-8">
           <h2 className="text-4xl font-bold uppercase text">{header}</h2>
@@ -50,10 +50,10 @@ function ContentBlock({
       {queryData.isSuccess && queryData.data.data.map(
         (game, key) => {
 
-          const previewSize = key === 0 ? firstBlockSize : 100 - firstBlockSize;
+          const previewsize = key === 0 ? firstBlockSize : 100 - firstBlockSize;
 
           return (
-          <GamePreview key={key} className="mx-0 lg:mx-2 my-4 lg:my-0" previewSize={previewSize}>
+          <GamePreview key={key} className="mx-0 lg:mx-2 my-4 lg:my-0" previewsize={previewsize}>
             <ImgContainer className="overflow-auto rounded-xl">
               <img className="object-cover h-full w-full" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
             </ImgContainer>
@@ -71,7 +71,7 @@ function ContentBlock({
               </div>
               <div className="hidden md:block">
                 <p className="w-4/5 text-sm mb-1 lg:mb-6">
-                  {game.attributes['reviewText'].substring(0, previewSize * 3)}...
+                  {game.attributes['reviewText'].substring(0, previewsize * 3)}...
                 </p>
               </div>
               <div className="flex">

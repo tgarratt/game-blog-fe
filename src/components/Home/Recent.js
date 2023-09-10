@@ -18,7 +18,7 @@ function Recent() {
   
 
   return (
-    <ContentBlock blockType={'primary'} queryData={query} firstBlockSize={60} />
+    <ContentBlock blocktype={'primary'} queryData={query} firstBlockSize={60} />
   );
 }
 

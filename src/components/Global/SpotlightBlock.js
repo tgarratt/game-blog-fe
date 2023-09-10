@@ -15,8 +15,7 @@ height: 30rem;
 ` 
 
 function SpotlightBlock({
-  blockType,
-  header,
+  blocktype,
   isSuccess,
   isLoading,
   game,
@@ -30,7 +29,7 @@ function SpotlightBlock({
   }
 
   return (
-    <div className={`${blockType}-block`}>
+    <div className={`${blocktype}-block`}>
       {isLoading && <p className="text">Loading...</p>}
       <div className="flex">
       {isSuccess && 

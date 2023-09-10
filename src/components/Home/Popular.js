@@ -17,7 +17,7 @@ function Popular() {
     });
 
   return (
-    <ContentBlock blockType={'primary'} header={'Popular Titles'} queryData={query} firstBlockSize={50} />
+    <ContentBlock blocktype={'primary'} header={'Popular Titles'} queryData={query} firstBlockSize={50} />
   );
 }
 

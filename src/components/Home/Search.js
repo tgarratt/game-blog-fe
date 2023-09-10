@@ -70,22 +70,22 @@ function Search() {
   }
 
   return (
-    <SearchBlock blockType={'primary'} queryData={searchQuery} direction={'col'}>
+    <SearchBlock blocktype={'primary'} queryData={searchQuery} direction={'col'}>
       <div className='w-full'>
         <InputContainer className='pb-1 mb-12'>
           <div className='flex justify-between'>
-            <SearchInput blockType={'primary'} placeholder='Search...' className='border-2 searchName-input' value={searchName} onChange={handleInputChange}/>
+            <SearchInput placeholder='Search...' className='border-2 searchName-input' value={searchName} onChange={handleInputChange}/>
             <MagnifyingGlass fillColour={'#fff'} />
           </div>
         </InputContainer>
           <div>
             <div className='text my-3 md:my-6 text-xl'>Filter by</div>
               <FilterContainer className='flex flex-wrap mb-6'>
-              {categoriesQuery.isSuccess && categoriesQuery.data.data.map((category) => {
+              {categoriesQuery.isSuccess && categoriesQuery.data.data.map((category, key) => {
                 const name = category.attributes.name
                 const isSelected = searchCategories.includes(name);
                 return (
-                  <div className={`${isSelected ? 'text-black' : 'text' } rounded-lg mr-2 my-1 px-2`} style={{borderColor: isSelected && category.attributes.colour,borderWidth: '1px', borderStyle: 'solid', backgroundColor: isSelected ? category.attributes.colour : 'transparent'}} onClick={handleCategoryClick}>{name}</div>
+                  <div key={key} className={`${isSelected ? 'text-black' : 'text' } rounded-lg mr-2 my-1 px-2`} style={{borderColor: isSelected && category.attributes.colour,borderWidth: '1px', borderStyle: 'solid', backgroundColor: isSelected ? category.attributes.colour : 'transparent'}} onClick={handleCategoryClick}>{name}</div>
                 )
                 })}
               </FilterContainer>

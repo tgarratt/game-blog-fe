@@ -24,9 +24,8 @@ text-wrap: nowrap
 ` 
 
 function ContentBlock({
-  blockType,
+  blocktype,
   queryData,
-  firstBlockSize,
   children
 }) {
 
@@ -38,7 +37,7 @@ function ContentBlock({
   }
 
   return (
-    <div className={`${blockType}-block`}>
+    <div className={`${blocktype}-block`}>
       <div className="flex flex-col md:flex-row">
         <div className="flex w-full h-min"> 
           {children}
@@ -46,12 +45,8 @@ function ContentBlock({
         {queryData.isLoading && <p className="text">Loading...</p>}
         <SearchResults className="flex flex-col w-full pr-4 overflow-y-scroll vertical-scroll">
         {queryData.isSuccess && queryData.data.data.map(
-          (game, key) => {
-
-            const previewSize = key === 0 ? firstBlockSize : 100 - firstBlockSize;
-
-            return (
-            <GamePreview key={key} className="mx-2 mb-8 md:my-8" previewSize={previewSize}>
+          (game, key) => (
+            <GamePreview key={key} className="mx-2 mb-8 md:my-8">
               <ImgContainer className="overflow-auto rounded-xl">
                 <img className="object-cover h-full w-full" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
               </ImgContainer>
@@ -82,7 +77,6 @@ function ContentBlock({
               </div>
             </GamePreview>
             )
-          }
         )}
         </SearchResults>
       </div>

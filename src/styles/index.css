@@ -10,7 +10,7 @@ body {
     font-family: 'DM Sans', sans-serif;
 }
 
-h1,h2,h3 {
+h1,h2,h3, .heading {
     font-family: 'futura', sans-serif;
 }
 
@@ -61,9 +61,15 @@ h1,h2,h3 {
     border-color: white;
 }
 
+.colored-seperator {
+  background: linear-gradient(0.25turn, #28D08A, #2FE1D7, #2B62CC);
+  width: 100%;
+  height: 15px;
+}
+
 /* nav bar  */
 
-/* The switch - the box around the slider */
+/* theme switch */
 .switch {
     position: relative;
     display: inline-block;
@@ -71,7 +77,7 @@ h1,h2,h3 {
     height: 24px;
   }
   
-  /* Hide default HTML checkbox */
+  /* Hide default checkbox */
   .switch input {
     opacity: 0;
     width: 0;
@@ -91,6 +97,7 @@ h1,h2,h3 {
     transition: .4s;
   }
   
+  /* The slider 'ball' */
   .slider:before {
     position: absolute;
     content: "";
@@ -104,6 +111,7 @@ h1,h2,h3 {
 
   }
 
+  /* When input active */
   input:checked + .slider:before {
     position: absolute;
     content: "";
