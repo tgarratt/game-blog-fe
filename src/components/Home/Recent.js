@@ -3,8 +3,8 @@ import { useQuery } from "react-query";
 
 import axios from "axios";
 
-import { getRecentGames } from "../../api/api";
-import ContentBlock from '../Global/ContentBlock';
+import { getRecentGames } from "../../api/Home/api";
+import ContentBlock from './ContentBlock';
 
 
 function Recent() {

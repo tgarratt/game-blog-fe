@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
+import { BrowserRouter } from 'react-router-dom';
 import {
   QueryClient,
   QueryClientProvider,
 } from 'react-query'
 
-import './styles/index.css';
 import reportWebVitals from './reportWebVitals';
-import Home from './components/Home/Home';
+
+import './styles/index.css';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -17,7 +18,9 @@ const queryClient = new QueryClient();
 root.render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Home />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>
 );

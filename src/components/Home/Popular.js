@@ -3,8 +3,8 @@ import { useQuery } from "react-query";
 
 import axios from "axios";
 
-import { getPopularGames } from "../../api/api";
-import ContentBlock from '../Global/ContentBlock';
+import { getPopularGames } from "../../api/Home/api";
+import ContentBlock from './ContentBlock';
 
 
 function Popular() {

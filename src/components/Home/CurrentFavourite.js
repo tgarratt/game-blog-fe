@@ -3,8 +3,8 @@ import { useQuery } from "react-query";
 
 import axios from "axios";
 
-import { getCurrentFavouriteGame } from "../../api/api";
-import SpotlightBlock from '../Global/SpotlightBlock';
+import { getCurrentFavouriteGame } from "../../api/Home/api";
+import SpotlightBlock from './SpotlightBlock';
 
 
 function CurrentFavourite() {

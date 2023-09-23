@@ -17,7 +17,5 @@ const getSearchedGames = (searchName, searchCategories) => {
 return `http://localhost:5000/api/games?filters[$and][0][name][$contains]=${searchName}${generateFilters()}&populate=*`
 };
 
-const getCategories = 'http://localhost:5000/api/categories';
 
-
-export { getRecentGames, getPopularGames, getCurrentFavouriteGame, getSearchedGames, getCategories }
+export { getRecentGames, getPopularGames, getCurrentFavouriteGame, getSearchedGames }

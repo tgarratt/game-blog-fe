@@ -159,3 +159,21 @@ h1,h2,h3, .heading {
       background-color: rgb(255, 255, 255);
       box-shadow: 0 0 1px rgba(255,255,255,.5);
   }
+
+/* Search input */
+
+.dark .search-input {
+  border-color: #fff;
+}
+
+.light .search-input {
+  border-color: #000;
+}
+
+.dark .search-input svg path {
+  fill: #fff;
+}
+
+.light .search-input svg path {
+  fill: #000;
+}

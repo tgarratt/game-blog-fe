@@ -44,7 +44,7 @@ function Footer() {
             </p>
           </FooterElement>          
        </div>
-       <div className='flex justify-end items-center'><Logo /><div className='text pl-2 text-3xl heading'>TechTom Plays</div></div>
+       <div className='flex justify-end items-center'><Logo /><div className='text pl-4 text-3xl heading'>TechTom Plays</div></div>
       </footer>
     </>
 

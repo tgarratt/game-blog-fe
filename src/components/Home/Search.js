@@ -3,20 +3,19 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { styled } from 'styled-components';
 
-import { getSearchedGames, getCategories } from "../../api/api";
-import SearchBlock from '../Global/SearchBlock';
+import { getSearchedGames } from "../../api/Home/api";
 import MagnifyingGlass from '../Icons/MagnifyingGlass';
+import SearchBlock from './SearchBlock';
+import { getCategories } from '../../api/Global/api';
 
 
 const InputContainer = styled.div`
   border-width: 0px 0px 2px 0px;
-  border-color: #fff;
   width: 60%;
 ` 
 
 const SearchInput = styled.input`
   background-color: transparent;
-  color: #fff;
   border: none;
   width: 100%;
   &:focus {
@@ -72,10 +71,10 @@ function Search() {
   return (
     <SearchBlock blocktype={'primary'} queryData={searchQuery} direction={'col'}>
       <div className='w-full'>
-        <InputContainer className='pb-1 mb-12'>
+        <InputContainer className='pb-1 mb-12 search-input'>
           <div className='flex justify-between'>
-            <SearchInput placeholder='Search...' className='border-2 searchName-input' value={searchName} onChange={handleInputChange}/>
-            <MagnifyingGlass fillColour={'#fff'} />
+            <SearchInput placeholder='Search...' className='border-2 searchName-input text' value={searchName} onChange={handleInputChange}/>
+            <MagnifyingGlass />
           </div>
         </InputContainer>
           <div>

@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from 'styled-components';
 
 import Timer from "../Icons/Timer";
+import Tag from "../Global/Tag";
 
 
 const SearchResults = styled.div`
@@ -23,7 +24,7 @@ const TimerContainer = styled.div`
 text-wrap: nowrap
 ` 
 
-function ContentBlock({
+function SearchBlock({
   blocktype,
   queryData,
   children
@@ -47,30 +48,34 @@ function ContentBlock({
         {queryData.isSuccess && queryData.data.data.map(
           (game, key) => (
             <GamePreview key={key} className="mx-2 mb-8 md:my-8">
-              <ImgContainer className="overflow-auto rounded-xl">
-                <img className="object-cover h-full w-full" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+              <ImgContainer className="overflow-auto rounded-xl overflow-hidden">
+                <a href={`/review/${game.id}`}>
+                  <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+                </a>
               </ImgContainer>
               <div className="text">
                   <div className="flex flex-col lg:flex-row justify-between mt-2">
                     <h3 className="text-3xl capitalize mb-0 lg:mb-6" style={{maxWidth: '60%'}}>
                       {game.attributes['name']}
                     </h3>
-                    <TimerContainer className="flex pt-1 items-center lg:items-start">
+                    <TimerContainer className="pt-1 lg:items-start">
+                      <div className="flex items-center w-[7rem]">
                       <p className="text-xs pr-1 my-2 lg:my-0">
                         {calculateReadTime(game.attributes['reviewText'])} minute read
                       </p>
                       <Timer fillColour={calculateReadTime(game.attributes['reviewText']) > 2 ? '#2D99D1' : '#29D18A'} />
+                      </div>
                     </TimerContainer>
                 </div>
                 <div className="hidden md:block">
-                  <p className="w-4/5 text-sm mb-6">
+                  <p className="w-4/5 text-sm mb-2">
                     {game.attributes['reviewText'].substring(0, 100)}...
                   </p>
                 </div>
                 <div className="flex mt-2 md:mt-0">
                   {game.attributes.categories.data.map(
                     (category, key) => (
-                      <div key={key} className="text-xs mr-2 rounded-lg w-fit px-2" style={{border: `1px ${category.attributes.colour} solid`}}>{category.attributes.name}</div>
+                      <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
                     )
                   )}
                 </div>
@@ -84,4 +89,4 @@ function ContentBlock({
   );
 }
 
-export default ContentBlock;
+export default SearchBlock;

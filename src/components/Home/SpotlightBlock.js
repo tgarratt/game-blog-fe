@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from 'styled-components';
 
 import Timer from "../Icons/Timer";
+import Tag from "../Global/Tag";
 
 
 
@@ -34,11 +35,13 @@ function SpotlightBlock({
       <div className="flex">
       {isSuccess && 
           <GamePreview className="mx-2 flex flex-col md:flex-row items-center">
-            <ImgContainer className="overflow-auto rounded-xl w-full">
-              <img className="object-cover h-full w-full" src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+            <ImgContainer className="overflow-auto overflow-hidden rounded-xl w-full">
+              <a href={`/review/${game.id}`}>
+              <img className="object-cover h-full w-full duration-150 hover:scale-110" src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+              </a>
             </ImgContainer>
             <div className="text w-full md:pl-16">
-                <div className="flex items-center justify-start py-3">
+                <div className="flex items-center justify-start py-3 w-[7rem]">
                   <p className="text-xs pr-1">
                     {calculateReadTime(game.attributes['reviewText'])} minute read
                   </p>
@@ -57,7 +60,7 @@ function SpotlightBlock({
               <div className="flex pt-2">
                 {game.attributes.categories.data.map(
                   (category, key) => (
-                    <div key={key} className="text-xs font-bold mt-4 mr-2 rounded-md w-fit px-2 py-0.5 " style={{border: `1px ${category.attributes.colour} solid`}}>{category.attributes.name}</div>
+                    <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
                   )
                 )}
               </div>

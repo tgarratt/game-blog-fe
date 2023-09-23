@@ -2,7 +2,7 @@ import React from "react";
 import { styled } from 'styled-components';
 
 import Timer from "../Icons/Timer";
-
+import Tag from "../Global/Tag";
 
 
 const GamePreview = styled.div`
@@ -54,30 +54,34 @@ function ContentBlock({
 
           return (
           <GamePreview key={key} className="mx-0 lg:mx-2 my-4 lg:my-0" previewsize={previewsize}>
-            <ImgContainer className="overflow-auto rounded-xl">
-              <img className="object-cover h-full w-full" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+            <ImgContainer className="overflow-auto rounded-xl overflow-hidden">
+              <a href={`/review/${game.id}`}>
+                <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+              </a>  
             </ImgContainer>
             <div className="text">
                 <div className="flex flex-col md:flex-row justify-between mt-2">
                   <h3 className="text-lg md:text-3xl capitalize mb-1 md:mb-6" style={{maxWidth: '80%'}}>
                     {game.attributes['name']}
                   </h3>
-                  <div className="flex pt-1">
-                    <p className="text-xs pr-1">
-                      {calculateReadTime(game.attributes['reviewText'])} minute read
-                    </p>
-                    <Timer fillColour={calculateReadTime(game.attributes['reviewText']) > 2 ? '#2D99D1' : '#29D18A'} />
+                  <div className="pt-1">
+                    <div className="flex items-center w-[7rem]">
+                      <p className="text-xs pr-1">
+                        {calculateReadTime(game.attributes['reviewText'])} minute read
+                      </p>
+                      <Timer fillColour={calculateReadTime(game.attributes['reviewText']) > 2 ? '#2D99D1' : '#29D18A'} />
+                    </div>
                   </div>
               </div>
               <div className="hidden md:block">
-                <p className="w-4/5 text-sm mb-1 lg:mb-6">
+                <p className="w-4/5 text-sm mb-1 lg:mb-2">
                   {game.attributes['reviewText'].substring(0, previewsize * 3)}...
                 </p>
               </div>
               <div className="flex">
                 {game.attributes.categories.data.map(
                   (category, key) => (
-                    <div key={key} className="text-xs mt-4 mr-2 rounded-lg w-fit px-2" style={{border: `1px ${category.attributes.colour} solid`}}>{category.attributes.name}</div>
+                    <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
                   )
                 )}
               </div>
