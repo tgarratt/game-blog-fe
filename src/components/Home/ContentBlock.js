@@ -50,13 +50,13 @@ function ContentBlock({
       {queryData.isSuccess && queryData.data.data.map(
         (game, key) => {
 
-          const previewsize = key === 0 ? firstBlockSize : 100 - firstBlockSize;
+          const previewSize = key === 0 ? firstBlockSize : 100 - firstBlockSize;
 
           return (
-          <GamePreview key={key} className="mx-0 lg:mx-2 my-4 lg:my-0" previewsize={previewsize}>
+          <GamePreview key={key} className="mx-0 lg:mx-2 my-4 lg:my-0" previewsize={previewSize}>
             <ImgContainer className="overflow-auto rounded-xl overflow-hidden">
               <a href={`/review/${game.id}`}>
-                <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+                <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'homepage-review-img'} src={`${process.env.REACT_APP_API_URL}${game.attributes.articleImage.data.attributes.url}`} />
               </a>  
             </ImgContainer>
             <div className="text">
@@ -75,13 +75,13 @@ function ContentBlock({
               </div>
               <div className="hidden md:block">
                 <p className="w-4/5 text-sm mb-1 lg:mb-2">
-                  {game.attributes['reviewText'].substring(0, previewsize * 3)}...
+                  {game.attributes['reviewText'].substring(0, previewSize * 3)}...
                 </p>
               </div>
               <div className="flex">
                 {game.attributes.categories.data.map(
                   (category, key) => (
-                    <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
+                    <Tag mapKey={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
                   )
                 )}
               </div>

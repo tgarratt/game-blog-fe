@@ -65,6 +65,8 @@ function Reviews() {
 
 useEffect(() => {
   allGamesQuery.refetch();
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 }, [orderDir, filterCategories, filterName])
 
   return (

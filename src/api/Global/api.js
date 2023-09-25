@@ -1,3 +1,3 @@
-const getCategories = 'http://localhost:5000/api/categories';
+const getCategories = `${process.env.REACT_APP_API_URL}/api/categories`;
 
 export { getCategories }

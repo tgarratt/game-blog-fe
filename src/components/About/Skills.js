@@ -8,8 +8,8 @@ function Skills({query}) {
           <div className='flex'>
             <h2 className='mr-5 md:mr-1 font-bold w-[6rem] md:w-auto h-[8rem]'>INTERESTS</h2>
             <div className='flex flex-col ml-6 md:ml-2 w-[4rem] md:w-auto'>
-              {query.isSuccess && query.data.data.attributes.interests.map((interest) => (
-                <p>{interest}</p>
+              {query.isSuccess && query.data.data.attributes.interests.map((interest, key) => (
+                <p key={key}>{interest}</p>
               ))}
             </div>
           </div>
@@ -18,8 +18,8 @@ function Skills({query}) {
           <div className='flex'>
             <h2 className='mr-5 md:mr-1 font-bold w-[6rem] md:w-auto h-[8rem]'>SKILLS</h2>
             <div className='flex flex-col ml-6 md:ml-2 w-[4rem] md:w-auto'>
-            {query.isSuccess && query.data.data.attributes.skills.map((skill) => (
-                <p>{skill}</p>
+            {query.isSuccess && query.data.data.attributes.skills.map((skill, key) => (
+                <p key={key}>{skill}</p>
               ))}
             </div>
           </div>
@@ -34,7 +34,7 @@ function Skills({query}) {
             <div className='absolute rounded-xl h-[20rem] w-[17rem] top-[50%] right-[50%] mt-[-10rem] mr-[-9rem]' style={{backgroundColor: 'grey'}}></div>
           }
           {query.isSuccess && 
-            <div className='absolute rounded-xl h-[20rem] w-[17rem] top-[50%] right-[50%] bg-cover bg-no-repeat mt-[-10rem] mr-[-9rem]' style={{backgroundImage: `url("http://localhost:5000${query.data.data.attributes.skills_picture.data.attributes.url}")`}}></div>
+            <div className='absolute rounded-xl h-[20rem] w-[17rem] top-[50%] right-[50%] bg-cover bg-no-repeat mt-[-10rem] mr-[-9rem]' style={{backgroundImage: `url("${process.env.REACT_APP_API_URL}${query.data.data.attributes.skills_picture.data.attributes.url}")`}}></div>
           }
 
           <div className='absolute h-[65px] w-[65px] bottom-[25%] right-[0%]' style={{backgroundColor: '#2AD49B', borderRadius: '50px'}}></div>

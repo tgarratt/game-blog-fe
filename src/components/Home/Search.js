@@ -48,6 +48,8 @@ function Search() {
 
   useEffect(() => {
     searchQuery.refetch();
+    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchName, searchCategories])
 
   const handleInputChange = (e) => {

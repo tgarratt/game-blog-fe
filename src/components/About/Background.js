@@ -6,10 +6,11 @@ function Background({query}) {
     <div className='primary-block'>
         <div className='flex flex-col min-[850px]:flex-row justify-between my-12 mx-auto' style={{maxWidth: '1200px'}}>
           <div className='text flex w-full min-[850px]:max-w-[50%]'>
-            <div className='flex flex-col justify-center mb-8 min-[850xp]:mb-0'>
+            <div className='flex flex-col justify-center mb-8 min-[850px]:mb-0'>
               <h1 className='text text-4xl font-bold pl-1 my-4'>BACKGROUND</h1>
               <p className='text pl-1'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nibh tellus, egestas id accumsan ornare, euismod in libero. Mauris et elementum massa, non auctor felis. Quisque in rhoncus leo. Morbi accumsan odio eu fermentum facilisis. Cras bibendum gravida mauris. Etiam nunc dolor, faucibus at lacus ac, tincidunt rutrum ligula. Ut tempus velit ac arcu pellentesque sodales. Donec sed iaculis neque. Quisque dolor elit, tincidunt vitae dapibus ac, rhoncus ut libero.
+                {query.isLoading && 'loading...'}
+                {query.isSuccess && query.data.data.attributes.background_text}
               </p>
             </div>
           </div>
@@ -23,7 +24,7 @@ function Background({query}) {
                 <div className='absolute rounded-xl h-[20rem] w-[17rem] left-[45%] bottom-[50%]' style={{backgroundColor: 'grey', marginLeft: '-125px', marginBottom: '-160px'}}></div>
               }
               {query.isSuccess && 
-                <div className='absolute rounded-xl h-[20rem] w-[16rem] left-[50%] min-[850px]:left-[45%] bottom-[50%] min-[850px]:bottom-[50%] bg-cover bg-no-repeat ml-[-8rem] mb-[-10rem]' style={{backgroundImage: `url("http://localhost:5000${query.data.data.attributes.intro_picture.data.attributes.url}")`}}></div>
+                <div className='absolute rounded-xl h-[20rem] w-[16rem] left-[50%] min-[850px]:left-[45%] bottom-[50%] min-[850px]:bottom-[50%] bg-cover bg-no-repeat ml-[-8rem] mb-[-10rem]' style={{backgroundImage: `url("${process.env.REACT_APP_API_URL}${query.data.data.attributes.intro_picture.data.attributes.url}")`}}></div>
               }
 
               <div className='absolute hidden min-[850px]:block h-[80px] w-[80px] top-[5%] left-[0%]' style={{backgroundColor: '#2B62CC', borderRadius: '50px'}}></div>

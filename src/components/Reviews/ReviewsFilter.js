@@ -1,6 +1,6 @@
 import React from 'react';
-
 import { styled } from 'styled-components';
+
 import MagnifyingGlass from '../Icons/MagnifyingGlass';
 
 
@@ -8,7 +8,16 @@ const InputContainer = styled.div`
   border-width: 0px 0px 2px 0px;
 ` 
 
-const SearchInput = styled.input`
+const FilterInput = styled.input`
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+` 
+
+const FilterSelect = styled.select`
   background-color: transparent;
   border: none;
   width: 100%;
@@ -33,7 +42,7 @@ function ReviewsFilter({
         <div>
           <InputContainer className='pb-1 mb-6 search-input w-2/3 md:w-1/2 lg:w-1/3'>
             <div className='flex justify-between'>
-              <SearchInput placeholder='Search...' className='border-2 searchName-input text text-xl' value={filterName} onChange={handleInputChange}/>
+              <FilterInput placeholder='Search...' className='border-2 searchName-input text text-xl' value={filterName} onChange={handleInputChange}/>
               <MagnifyingGlass size={'50'} />
             </div>
           </InputContainer>
@@ -47,13 +56,13 @@ function ReviewsFilter({
             )
             })}
         </div>
-        <div className='self-end my-2'>
-          <select onChange={handleOrderChange}>
+        <div className='self-end my-2 text text-lg'>
+          <FilterSelect onChange={handleOrderChange}>
             <option value='publishedDesc'>Newest First</option>
             <option value='publishedAsc'>Oldest First</option>
             <option value='ratingDesc'>Highest Rating</option>
             <option value='ratingAsc'>Lowest Rating</option>
-          </select>
+          </FilterSelect>
         </div>
       </div>
 

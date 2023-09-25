@@ -1,4 +1,4 @@
-const getAboutInfo = 'http://localhost:5000/api/about?populate=*';
+const getAboutInfo = `${process.env.REACT_APP_API_URL}/api/about?populate=*`;
 
 
 

@@ -50,7 +50,7 @@ function SearchBlock({
             <GamePreview key={key} className="mx-2 mb-8 md:my-8">
               <ImgContainer className="overflow-auto rounded-xl overflow-hidden">
                 <a href={`/review/${game.id}`}>
-                  <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'review-img'} src={`http://localhost:5000${game.attributes.articleImage.data.attributes.url}`} />
+                  <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'homepage-search-review-img'} src={`${process.env.REACT_APP_API_URL}${game.attributes.articleImage.data.attributes.url}`} />
                 </a>
               </ImgContainer>
               <div className="text">
