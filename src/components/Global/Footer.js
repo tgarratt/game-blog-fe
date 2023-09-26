@@ -20,17 +20,12 @@ function Footer() {
         <div className='flex flex-col'>
           <FooterElement>
             <p className='text my-1 cursor-pointer w-fit'>
-              <a href="#!">Blog</a>
+              <a href="/about">About</a>
             </p>
           </FooterElement>
           <FooterElement>
             <p className='text my-1 cursor-pointer w-fit'>
-              <a href="#!">About</a>
-            </p>
-          </FooterElement>
-          <FooterElement>
-            <p className='text my-1 cursor-pointer w-fit'>
-              <a href="#!">Contact</a>
+              <a href="/reviews">All Reviews</a>
             </p>
           </FooterElement>
           <FooterElement>
@@ -42,7 +37,12 @@ function Footer() {
             <p className='text my-1 cursor-pointer w-fit'>
               <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/tom-a-garratt/">LinkedIn</a>
             </p>
-          </FooterElement>          
+          </FooterElement>    
+          <FooterElement>
+            <p className='text my-1 cursor-pointer w-fit'>
+              <a href="mailto:tomagarratt@yahoo.co.uk">tomagarratt@yahoo.co.uk</a>
+            </p>
+          </FooterElement>      
        </div>
        <div className='flex justify-end items-center'><Logo /><div className='text pl-4 text-3xl heading'>TechTom Plays</div></div>
       </footer>

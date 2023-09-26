@@ -7,13 +7,18 @@ import Links from './Links';
 
 function App() {
 
-    const [theme, setTheme] = useState('dark');
+    const [theme, setTheme] = useState(() => {
+      const themeValue = localStorage.getItem('theme')
+      return themeValue || 'dark';
+    });
 
     const toggleTheme = () => {
         if (theme === 'light') {
         setTheme('dark');
+        localStorage.setItem('theme', 'dark')
         } else {
         setTheme('light');
+        localStorage.setItem('theme', 'light')
         }
     };
 
