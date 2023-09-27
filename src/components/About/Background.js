@@ -24,7 +24,7 @@ function Background({query}) {
                 <div className='absolute rounded-xl h-[20rem] w-[17rem] left-[45%] bottom-[50%]' style={{backgroundColor: 'grey', marginLeft: '-125px', marginBottom: '-160px'}}></div>
               }
               {query.isSuccess && 
-                <div className='absolute rounded-xl h-[20rem] w-[16rem] left-[50%] min-[850px]:left-[45%] bottom-[50%] min-[850px]:bottom-[50%] bg-cover bg-no-repeat ml-[-8rem] mb-[-10rem]' style={{backgroundImage: `url("${query.data.data.attributes.intro_picture.data.attributes.url}")`}}></div>
+                <div className='absolute rounded-xl h-[20rem] w-[16rem] left-[50%] min-[850px]:left-[45%] bottom-[50%] min-[850px]:bottom-[50%] bg-cover bg-no-repeat ml-[-8rem] mb-[-10rem]' style={{backgroundImage: `url("${query.data.data.attributes.background_picture.data.attributes.url}")`}}></div>
               }
 
               <div className='absolute hidden min-[850px]:block h-[80px] w-[80px] top-[5%] left-[0%]' style={{backgroundColor: '#2B62CC', borderRadius: '50px'}}></div>
