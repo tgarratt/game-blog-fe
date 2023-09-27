@@ -42,7 +42,6 @@ function ContentBlock({
       {header &&
         <div className="flex flex-col md:flex-row mb-8">
           <h2 className="text-4xl font-bold uppercase text">{header}</h2>
-          <div className="text md:ml-auto mt-2 md:mt-0">More Reviews --</div>
         </div>
       }
       {queryData.isLoading && <p className="text">Loading...</p>}
