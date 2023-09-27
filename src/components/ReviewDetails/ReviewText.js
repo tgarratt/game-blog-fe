@@ -30,7 +30,7 @@ const formatDate = (date) => (
                         </ReactMarkdown>    
                     </div>
                     <BannerContainer className='md:pr-[17.5%]'>
-                        <img className="object-cover h-full w-full rounded-xl my-8" alt={'review-banner-img'} src={`${process.env.REACT_APP_API_URL}${query.data.data.attributes.banner.data.attributes.url}`} />
+                        <img className="object-cover h-full w-full rounded-xl my-8" alt={'review-banner-img'} src={`${query.data.data.attributes.banner.data.attributes.url}`} />
                     </BannerContainer>
                     <div className='mr-0 md:mr-[25%] ml-0 md:ml-[7.5%]'>
                         <div className='text w-fit text-3xl pl-2 mx-auto mb-6 mt-10 ' style={{borderLeft: '5px solid #D9D9D9', borderRadius: '5px'}}>{query.data.data.attributes.quote}</div>

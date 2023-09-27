@@ -56,7 +56,7 @@ function ContentBlock({
           <GamePreview key={key} className="mx-0 lg:mx-2 my-4 lg:my-0" previewsize={previewSize}>
             <ImgContainer className="overflow-auto rounded-xl overflow-hidden">
               <a href={`/review/${game.id}`}>
-                <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'homepage-review-img'} src={`${process.env.REACT_APP_API_URL}${game.attributes.articleImage.data.attributes.url}`} />
+                <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'homepage-review-img'} src={`${game.attributes.articleImage.data.attributes.url}`} />
               </a>  
             </ImgContainer>
             <div className="text">

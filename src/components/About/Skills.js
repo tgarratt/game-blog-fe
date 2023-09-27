@@ -34,7 +34,7 @@ function Skills({query}) {
             <div className='absolute rounded-xl h-[20rem] w-[17rem] top-[50%] right-[50%] mt-[-10rem] mr-[-9rem]' style={{backgroundColor: 'grey'}}></div>
           }
           {query.isSuccess && 
-            <div className='absolute rounded-xl h-[20rem] w-[17rem] top-[50%] right-[50%] bg-cover bg-no-repeat mt-[-10rem] mr-[-9rem]' style={{backgroundImage: `url("${process.env.REACT_APP_API_URL}${query.data.data.attributes.skills_picture.data.attributes.url}")`}}></div>
+            <div className='absolute rounded-xl h-[20rem] w-[17rem] top-[50%] right-[50%] bg-cover bg-no-repeat mt-[-10rem] mr-[-9rem]' style={{backgroundImage: `url("${query.data.data.attributes.skills_picture.data.attributes.url}")`}}></div>
           }
 
           <div className='absolute h-[65px] w-[65px] bottom-[25%] right-[0%]' style={{backgroundColor: '#2AD49B', borderRadius: '50px'}}></div>

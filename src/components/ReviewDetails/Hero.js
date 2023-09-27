@@ -10,7 +10,7 @@ function Hero({query}) {
             {query.isSuccess && 
                 <>
                     <div className='w-full lg:w-[50%] h-[20rem] lg:h-[30rem]'>
-                        <img className="object-cover h-full w-full rounded-xl" alt={'review-main-img'} src={`${process.env.REACT_APP_API_URL}${query.data.data.attributes.articleImage.data.attributes.url}`} />
+                        <img className="object-cover h-full w-full rounded-xl" alt={'review-main-img'} src={`${query.data.data.attributes.articleImage.data.attributes.url}`} />
                     </div>
                     <div className='flex flex-col text lg:self-center mb-4 lg:mb-0 ml-0 lg:ml-16'>
                         <div className='flex mb-2 lg:mb-6'>

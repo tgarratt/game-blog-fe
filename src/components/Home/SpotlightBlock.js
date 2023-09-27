@@ -37,7 +37,7 @@ function SpotlightBlock({
           <GamePreview className="mx-2 flex flex-col md:flex-row items-center">
             <ImgContainer className="overflow-auto overflow-hidden rounded-xl w-full">
               <a href={`/review/${game.id}`}>
-              <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'spotlight-reviw-img'} src={`${process.env.REACT_APP_API_URL}${game.attributes.articleImage.data.attributes.url}`} />
+              <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'spotlight-reviw-img'} src={`${game.attributes.articleImage.data.attributes.url}`} />
               </a>
             </ImgContainer>
             <div className="text w-full md:pl-16">

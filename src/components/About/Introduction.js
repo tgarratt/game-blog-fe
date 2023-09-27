@@ -17,7 +17,7 @@ function Introduction({query}) {
                 <div className='absolute rounded-xl left-[45%] bottom-[50%] h-[20rem] w-[70%] lg:w-[60%] ml-[-6rem] mb-[-55%] lg:mb-[-160px]' style={{backgroundColor: 'grey'}}></div>
               }
               {query.isSuccess && 
-                <div className='absolute md:relative rounded-xl bottom-auto left-auto md:left-[45%] md:bottom-[-10%] h-[20rem] w-[55%] md:w-[55%] md:w-[70%] lg:w-[60%] ml-0 mb-0 md:ml-[-6rem] md:mb-[-55%] lg:mb-[-160px] bg-cover bg-no-repeat' style={{backgroundImage: `url("${process.env.REACT_APP_API_URL}${query.data.data.attributes.intro_picture.data.attributes.url}")`}}></div>
+                <div className='absolute md:relative rounded-xl bottom-auto left-auto md:left-[45%] md:bottom-[-10%] h-[20rem] w-[55%] md:w-[55%] md:w-[70%] lg:w-[60%] ml-0 mb-0 md:ml-[-6rem] md:mb-[-55%] lg:mb-[-160px] bg-cover bg-no-repeat' style={{backgroundImage: `url("${query.data.data.attributes.intro_picture.data.attributes.url}")`}}></div>
               }
 
               <div className='absolute hidden md:block height-[5rem] width-[5rem] bottom-[25%] left-[0%]' style={{backgroundColor: '#2B62CC', borderRadius: '50px'}}></div>
