@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactMarkdown from 'react-markdown';
 
 
 function Background({query}) {
@@ -10,7 +11,9 @@ function Background({query}) {
               <h1 className='text text-4xl font-bold pl-1 my-4'>BACKGROUND</h1>
               <p className='text pl-1'>
                 {query.isLoading && 'loading...'}
+                <ReactMarkdown>
                 {query.isSuccess && query.data.data.attributes.background_text}
+                </ReactMarkdown>
               </p>
             </div>
           </div>

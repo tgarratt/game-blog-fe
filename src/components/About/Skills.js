@@ -6,21 +6,29 @@ function Skills({query}) {
       <div className='flex flex-col md:flex-row justify-between lg:justify-between text-xl md:text-base my-4 md:my-12 items-center mx-auto' style={{maxWidth: '1200px'}}>
         <div className='text flex sm:mx-0 md:mx-16 w-[11rem] md:w-auto lg:mx-0'>
           <div className='flex'>
-            <h2 className='mr-5 md:mr-1 font-bold w-[6rem] md:w-auto h-[8rem]'>INTERESTS</h2>
+            <h2 className='mr-5 md:mr-3 font-bold w-[6rem] md:w-auto h-[8rem]'>INTERESTS</h2>
             <div className='flex flex-col ml-6 md:ml-2 w-[4rem] md:w-auto'>
+              <ul className='ml-1'>
               {query.isSuccess && query.data.data.attributes.interests.map((interest, key) => (
-                <p key={key}>{interest}</p>
+                <li className='list-disc'>
+                  <p key={key}>{interest}</p>
+                </li>
               ))}
+              </ul>
             </div>
           </div>
         </div>
         <div className='text flex mt-10 md:mt-0 sm:mx-0 md:mx-16 w-[11rem] md:w-auto lg:mx-0'>
           <div className='flex'>
-            <h2 className='mr-5 md:mr-1 font-bold w-[6rem] md:w-auto h-[8rem]'>SKILLS</h2>
+            <h2 className='mr-5 md:mr-3 font-bold w-[6rem] md:w-auto h-[8rem]'>SKILLS</h2>
             <div className='flex flex-col ml-6 md:ml-2 w-[4rem] md:w-auto'>
+              <ul className='ml-1'>
             {query.isSuccess && query.data.data.attributes.skills.map((skill, key) => (
-                <p key={key}>{skill}</p>
+                <li className='list-disc'>
+                  <p key={key}>{skill}</p>
+                </li>
               ))}
+              </ul>
             </div>
           </div>
         </div>

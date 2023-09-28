@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Tag from '../Global/Tag';
+import ReactMarkdown from 'react-markdown';
 
 
 function Introduction({query}) {
@@ -27,12 +28,14 @@ function Introduction({query}) {
             <div className='flex flex-col justify-center'>
               <div className='flex'>
                 <Tag colour='#15C0A7'>Software Developer</Tag>
-                <Tag colour='#2B62CC'>Fella</Tag>
+                <Tag colour='#2B62CC'>Game Enthusiast</Tag>
               </div>
               <h1 className='text text-4xl font-bold pl-1 my-4'>ABOUT</h1>
               <p className='text pl-1'>
                 {query.isLoading && 'loading...'}
+                <ReactMarkdown>
                 {query.isSuccess && query.data.data.attributes.intro_text}
+                </ReactMarkdown>
               </p>
             </div>
 
