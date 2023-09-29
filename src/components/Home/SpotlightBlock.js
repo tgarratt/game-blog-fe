@@ -32,7 +32,7 @@ function SpotlightBlock({
   return (
     <div className={`${blocktype}-block`}>
       {isLoading && <p className="text">Loading...</p>}
-      <div className="flex">
+      <div className="flex mx-auto" style={{maxWidth: '2000px'}}>
       {isSuccess && 
           <GamePreview className="mx-2 flex flex-col md:flex-row items-center">
             <ImgContainer className="overflow-auto overflow-hidden rounded-xl w-full">

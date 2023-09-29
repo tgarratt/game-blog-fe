@@ -39,6 +39,7 @@ function ContentBlock({
 
   return (
     <div className={`${blocktype}-block`}>
+      <div className="mx-auto" style={{maxWidth: '2000px'}}>
       {header &&
         <div className="flex flex-col md:flex-row mb-8">
           <h2 className="text-4xl font-bold uppercase text">{header}</h2>
@@ -89,6 +90,7 @@ function ContentBlock({
           )
         }
       )}
+      </div>
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ import Tag from "../Global/Tag";
 function Hero({query}) {
   return (
     <div className='primary-block'>
-        <div className='flex flex-col-reverse lg:flex-row mb-10'>
+        <div className='flex flex-col-reverse lg:flex-row mb-10 mx-auto' style={{maxWidth: '2000px'}}>
             {query.isLoading && <p>Loading...</p>}
             {query.isSuccess && 
                 <>

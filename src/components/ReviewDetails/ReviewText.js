@@ -15,7 +15,7 @@ const formatDate = (date) => (
 
   return (
     <div className='secondary-block'>
-        <div className='flex mt-8'>
+        <div className='flex mt-8 mx-auto' style={{maxWidth: '2000px'}}>
             {query.isLoading && <p>Loading...</p>}
             {query.isSuccess && 
                 <div className='flex w-full'>

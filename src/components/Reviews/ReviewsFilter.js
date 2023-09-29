@@ -38,7 +38,7 @@ function ReviewsFilter({
   return (
     <div className='primary-block'>
       {categories.isLoading && <div className='text'>Loading...</div>}
-      <div className='flex flex-col mt-8'>
+      <div className='flex flex-col mt-8 mx-auto' style={{maxWidth: '2000px'}}>
         <div>
           <InputContainer className='pb-1 mb-6 search-input w-2/3 md:w-1/2 lg:w-1/3'>
             <div className='flex justify-between'>
@@ -47,12 +47,13 @@ function ReviewsFilter({
             </div>
           </InputContainer>
         </div>
-        <div className='flex'>
+        <div className='flex flex-wrap items-center'>
+          <p className='text pr-4'>Filter by:</p>
         {categories.isSuccess && categories.data.data.map((category, key) => {
             const name = category.attributes.name
             const isSelected = filterCategories.includes(name);
             return (
-              <div key={key} className={`${isSelected ? 'text-black' : 'text' } rounded-lg mr-2 my-1 px-2 w-fit`} style={{borderColor: isSelected && category.attributes.colour,borderWidth: '1px', borderStyle: 'solid', backgroundColor: isSelected ? category.attributes.colour : 'transparent'}} onClick={handleCategoryClick} >{name}</div>
+              <div key={key} className={`${isSelected ? 'text-black' : 'text' } rounded-lg mr-2 my-1 px-2 w-fit cursor-pointer`} style={{borderColor: isSelected && category.attributes.colour,borderWidth: '1px', borderStyle: 'solid', backgroundColor: isSelected ? category.attributes.colour : 'transparent'}} onClick={handleCategoryClick} >{name}</div>
             )
             })}
         </div>

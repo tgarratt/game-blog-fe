@@ -5,7 +5,7 @@ function ReviewsResults({query}) {
 
   return (
     <div className='primary-block'>
-        <div className='flex flex-wrap'>
+        <div className='flex flex-wrap mx-auto' style={{maxWidth: '2000px'}}>
         {query.isLoading && <p>Loading...</p>}
         {query.isSuccess && 
             query.data.data.map((game) => {

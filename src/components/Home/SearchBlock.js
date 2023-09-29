@@ -27,6 +27,7 @@ text-wrap: nowrap
 function SearchBlock({
   blocktype,
   queryData,
+  searchCategories,
   children
 }) {
 
@@ -39,7 +40,7 @@ function SearchBlock({
 
   return (
     <div className={`${blocktype}-block`}>
-      <div className="flex flex-col md:flex-row">
+      <div className="flex flex-col md:flex-row mx-auto" style={{maxWidth: '2000px'}}>
         <div className="flex w-full h-min"> 
           {children}
         </div>
@@ -74,9 +75,13 @@ function SearchBlock({
                 </div>
                 <div className="flex mt-2 md:mt-0">
                   {game.attributes.categories.data.map(
-                    (category, key) => (
-                      <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
-                    )
+                    (category, key) => {
+                      let isSelected = searchCategories.includes(category.attributes.name);
+
+                        return (
+                        <Tag key={key} colour={category.attributes.colour} isButtton={true} isSelected={isSelected} >{category.attributes.name}</Tag>
+                      )
+                    }
                   )}
                 </div>
               </div>

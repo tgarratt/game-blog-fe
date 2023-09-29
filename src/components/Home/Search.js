@@ -71,7 +71,7 @@ function Search() {
   }
 
   return (
-    <SearchBlock blocktype={'primary'} queryData={searchQuery} direction={'col'}>
+    <SearchBlock blocktype={'primary'} queryData={searchQuery} searchCategories={searchCategories} direction={'col'}>
       <div className='w-full'>
         <InputContainer className='pb-1 mb-12 search-input'>
           <div className='flex justify-between'>
@@ -86,7 +86,7 @@ function Search() {
                 const name = category.attributes.name
                 const isSelected = searchCategories.includes(name);
                 return (
-                  <div key={key} className={`${isSelected ? 'text-black' : 'text' } rounded-lg mr-2 my-1 px-2`} style={{borderColor: isSelected && category.attributes.colour,borderWidth: '1px', borderStyle: 'solid', backgroundColor: isSelected ? category.attributes.colour : 'transparent'}} onClick={handleCategoryClick}>{name}</div>
+                  <div key={key} className={`${isSelected ? 'text-black' : 'text' } rounded-lg mr-2 my-1 px-2 cursor-pointer`} style={{borderColor: isSelected && category.attributes.colour,borderWidth: '1px', borderStyle: 'solid', backgroundColor: isSelected ? category.attributes.colour : 'transparent'}} onClick={handleCategoryClick}>{name}</div>
                 )
                 })}
               </FilterContainer>
