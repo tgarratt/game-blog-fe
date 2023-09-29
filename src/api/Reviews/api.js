@@ -7,7 +7,7 @@ const getAllGames = (orderDir, filterCategories, filterName) => {
         return categoryFilters
     }
 
-    return `${process.env.REACT_APP_API_URL}/api/games?sort[0]=${orderDir}&filters[$and][0][name][$contains]=${filterName}${generateFilters()}&populate=*`
+    return `${process.env.REACT_APP_API_URL}/api/games?sort[0]=${orderDir}&filters[$and][0][name][$containsi]=${filterName}${generateFilters()}&populate=*`
 };
 
 

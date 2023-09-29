@@ -14,7 +14,7 @@ const getSearchedGames = (searchName, searchCategories) => {
         return categoryFilters
     }
 
-return `${process.env.REACT_APP_API_URL}/api/games?filters[$and][0][name][$contains]=${searchName}${generateFilters()}&populate=*`
+return `${process.env.REACT_APP_API_URL}/api/games?filters[$and][0][name][$containsi]=${searchName}${generateFilters()}&populate=*`
 };
 
 
