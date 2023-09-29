@@ -43,7 +43,7 @@ function Nav({toggleTheme, theme}) {
             <NavElement className='my-2 mx-4 text cursor-pointer'><a href="/reviews">All Reviews</a></NavElement>
             <div className='flex items-center absolute lg:relative top-4 lg:top-auto right-5 lg:right-auto'>            
               <label className="switch">
-                <input type="checkbox" defaultChecked={theme === 'light'} onClick={toggleTheme} />
+                <input type="checkbox" defaultChecked={theme === 'light'} onClick={toggleTheme} aria-label="light or dark theme toggle"/>
                 <span className="slider round"></span>
               </label>
             </div>
