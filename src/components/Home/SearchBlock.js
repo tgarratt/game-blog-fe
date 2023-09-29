@@ -57,7 +57,9 @@ function SearchBlock({
               <div className="text">
                   <div className="flex flex-col lg:flex-row justify-between mt-2">
                     <h3 className="text-3xl capitalize mb-0 lg:mb-6" style={{maxWidth: '60%'}}>
+                      <a href={`/review/${game.id}`}>
                       {game.attributes['name']}
+                      </a>
                     </h3>
                     <TimerContainer className="pt-1 lg:items-start">
                       <div className="flex items-center w-[7rem]">

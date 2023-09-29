@@ -61,9 +61,11 @@ function ContentBlock({
             </ImgContainer>
             <div className="text">
                 <div className="flex flex-col md:flex-row justify-between mt-2">
-                  <h3 className="text-lg md:text-3xl capitalize mb-1 md:mb-6" style={{maxWidth: '80%'}}>
-                    {game.attributes['name']}
-                  </h3>
+                  <a href={`/review/${game.id}`} className="w-full">
+                    <h3 className="text-lg md:text-3xl capitalize mb-1 md:mb-6" style={{maxWidth: '80%'}}>
+                      {game.attributes['name']}
+                    </h3>
+                  </a>
                   <div className="pt-1">
                     <div className="flex items-center w-[7rem]">
                       <p className="text-xs pr-1">

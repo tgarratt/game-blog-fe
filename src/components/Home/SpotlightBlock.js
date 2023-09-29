@@ -48,9 +48,11 @@ function SpotlightBlock({
                   <Timer fillColour={calculateReadTime(game.attributes['reviewText']) > 2 ? '#2D99D1' : '#29D18A'} />
                 </div>
                 <div className="flex justify-between">
-                <h3 className="text-3xl capitalize mb-4">
-                  {game.attributes['name']}
-                </h3>
+                  <a href={`/review/${game.id}`}>
+                    <h3 className="text-3xl capitalize mb-4">
+                      {game.attributes['name']}
+                    </h3>
+                  </a>
               </div>
               <div>
                 <p className="w-4/5 text-sm">
