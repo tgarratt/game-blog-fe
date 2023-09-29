@@ -31,7 +31,7 @@ function Introduction({query}) {
                 <Tag colour='#2B62CC'>Game Enthusiast</Tag>
               </div>
               <h1 className='text text-4xl font-bold pl-1 my-4'>ABOUT</h1>
-              <p className='text pl-1'>
+              <p className='text pl-1 rich-text'>
                 {query.isLoading && 'loading...'}
                 <ReactMarkdown>
                 {query.isSuccess && query.data.data.attributes.intro_text}

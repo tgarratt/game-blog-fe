@@ -9,7 +9,7 @@ function Background({query}) {
           <div className='text flex w-full min-[850px]:max-w-[50%]'>
             <div className='flex flex-col justify-center mb-8 min-[850px]:mb-0'>
               <h1 className='text text-4xl font-bold pl-1 my-4'>BACKGROUND</h1>
-              <p className='text pl-1'>
+              <p className='text pl-1 rich-text'>
                 {query.isLoading && 'loading...'}
                 <ReactMarkdown>
                 {query.isSuccess && query.data.data.attributes.background_text}

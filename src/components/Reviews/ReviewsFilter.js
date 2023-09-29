@@ -58,10 +58,10 @@ function ReviewsFilter({
         </div>
         <div className='self-end my-2 text text-lg'>
           <FilterSelect onChange={handleOrderChange}>
-            <option value='publishedDesc'>Newest First</option>
-            <option value='publishedAsc'>Oldest First</option>
-            <option value='ratingDesc'>Highest Rating</option>
-            <option value='ratingAsc'>Lowest Rating</option>
+            <option value='publishedDesc' className='text-black'>Newest First</option>
+            <option value='publishedAsc' className='text-black'>Oldest First</option>
+            <option value='ratingDesc' className='text-black'>Highest Rating</option>
+            <option value='ratingAsc' className='text-black'>Lowest Rating</option>
           </FilterSelect>
         </div>
       </div>
