@@ -46,6 +46,9 @@ function SearchBlock({
         </div>
         {queryData.isLoading && <p className="text">Loading...</p>}
         <SearchResults className="flex flex-col w-full pr-4 overflow-y-scroll vertical-scroll">
+        {queryData.isSuccess && queryData.data.data.length === 0 && 
+          <div className='text text-center mx-auto mt-10 md:mt-20 mb-10 md:mt-0'>Sorry no results found, looking for a game? Suggest it <a href='mailto:tomagarratt@yahoo.co.uk' className='underline'>here!</a></div>
+        }
         {queryData.isSuccess && queryData.data.data.map(
           (game, key) => (
             <GamePreview key={key} className="mx-2 mb-8 md:my-8">
