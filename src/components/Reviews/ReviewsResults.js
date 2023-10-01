@@ -13,7 +13,7 @@ function ReviewsResults({query}) {
         {query.isSuccess && 
             query.data.data.map((game) => {
             return (
-            <div className="w-1/2 lg:w-1/3 xl:w-1/4 px-2">
+            <div className="w-1/2 lg:w-1/3 xl:w-1/4 px-2 h-fit mb-20">
                 <div className="overflow-auto rounded-xl overflow-hidden h-[10rem] w-full">
                 <a href={`/review/${game.id}`}>
                     <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'reviews-search-img'} src={`${game.attributes.articleImage.data.attributes.url}`} />

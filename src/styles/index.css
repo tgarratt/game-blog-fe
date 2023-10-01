@@ -81,6 +81,10 @@ h1,h2,h3, .heading {
   margin: 15px 0px;
 }
 
+.rich-text a {
+  text-decoration: underline;
+}
+
 /* nav bar  */
 
 /* theme switch */
