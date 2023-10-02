@@ -47,7 +47,7 @@ function ReviewsFilter({
             </div>
           </InputContainer>
         </div>
-        <div className='flex flex-wrap items-center'>
+        <div className='flex flex-wrap items-center max-w-full lg:max-w-[60%]'>
           <p className='text pr-4'>Filter by:</p>
         {categories.isSuccess && categories.data.data.map((category, key) => {
             const name = category.attributes.name

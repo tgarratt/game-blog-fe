@@ -9,7 +9,7 @@ import { getCategories } from '../api/Global/api';
 
 
 function Reviews() {
-  const [orderDir, setOrderBy] = useState('publishedAt:asc');
+  const [orderDir, setOrderBy] = useState('publishedAt:desc');
   const [filterCategories, setFilterCategories] = useState([]);
   const [filterName, setFilterName] = useState('');
 
@@ -30,7 +30,7 @@ function Reviews() {
   const handleOrderChange = (e) => {
     const direction = e.target.value
 
-    if(direction === 'publishedDesc') {
+    if(direction === 'publishedAsc') {
         // order by oldest entry first
         setOrderBy('publishedAt:asc')
       } else if(direction === 'ratingDesc') {
