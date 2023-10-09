@@ -40,7 +40,7 @@ function ReviewsFilter({
       {categories.isLoading && <div className='text'>Loading...</div>}
       <div className='flex flex-col mt-8 mx-auto' style={{maxWidth: '2000px'}}>
         <div>
-          <InputContainer className='pb-1 mb-6 search-input w-2/3 md:w-1/2 lg:w-1/3'>
+          <InputContainer className='pb-1 mb-6 fillable-svg w-2/3 md:w-1/2 lg:w-1/3'>
             <div className='flex justify-between'>
               <FilterInput placeholder='Search...' className='border-2 searchName-input text text-xl' value={filterName} onChange={handleInputChange}/>
               <MagnifyingGlass size={'50'} />

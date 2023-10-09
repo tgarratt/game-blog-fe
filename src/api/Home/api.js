@@ -1,4 +1,4 @@
-const getRecentGames = `${process.env.REACT_APP_API_URL}/api/games?sort[0]=createdAt:desc&pagination[limit]=2&populate=*`;
+const getRecentGames = `${process.env.REACT_APP_API_URL}/api/games?sort[0]=createdAt:desc&pagination[limit]=4&populate=*`;
 
 const getPopularGames = `${process.env.REACT_APP_API_URL}/api/games?filters[popular][$eq]=True&pagination[limit]=2&populate=*`;
 
