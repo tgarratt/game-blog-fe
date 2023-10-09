@@ -70,16 +70,21 @@ function ContentBlock({
 
       {itemsCount > 2 &&  
       <>
-        <div className={`hidden lg:flex justify-start relative left-[-4rem] bottom-[-18rem] h-[32px] fillable-svg`}>
+        <div className={`hidden lg:flex justify-start relative left-[-4rem] bottom-[-16rem] h-[32px] fillable-svg`}>
           <div className={`${primaryReview === 0 ? 'hidden' : 'h-[28px] hover:h-[32px] duration-500'}`} onClick={scrollBackwards}>
             <BackArrows />
+          </div>
+        </div>
+        <div className={`hidden lg:flex justify-end relative right-[-4rem] bottom-[-14rem] h-[32px] fillable-svg`}>
+          <div className={`${primaryReview === 2 ? 'hidden' : 'h-[28px] hover:h-[32px] duration-500'}`} onClick={scrollForwards}>
+            <NextArrows />
           </div>
         </div>
       </>
       }
 
       <div className="flex flex-col lg:flex-row mb-1 lg:mb-20 overflow-hidden scroll-smooth" style={{scrollSnapType: 'x mandatory'}} ref={containerRef}>
-        {queryData.isLoading && <p>Loading...</p>}
+        {queryData.isLoading && <p className="text">Loading...</p>}
         {queryData.isSuccess && queryData.data.data.map(
           (game, key) => {
 
@@ -129,15 +134,6 @@ function ContentBlock({
           }
         )}
         </div>
-        {itemsCount > 2 && 
-        <>
-          <div className={`hidden lg:flex justify-end relative right-[-4rem] top-[-25rem] w-full h-[28px] hover:h-[32px] duration-500 fillable-svg `} onClick={scrollForwards}>
-            <div className={`${primaryReview === 2 && 'hidden'}`}>
-              <NextArrows />
-            </div>
-          </div>
-        </>
-        }
       </div>
     </div>
   );
