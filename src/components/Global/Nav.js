@@ -29,7 +29,7 @@ function Nav({toggleTheme, theme}) {
         <div className='flex flex-col lg:flex-row flex-wrap md:flex-nowrap justify-between mb-2 mt-3 md:mt-6 items-center text-sm'>
           <a href='/'>
             <div className='mt-2 text w-full md:w-auto text-center md:text-left flex items-center'>
-              <div className='h-[2rem] md:h-[3rem]'>
+              <div className='h-[2rem]'>
                 <Logo />
               </div>  
                 <div className='text pl-4 text-2xl md:text-3xl heading'>TechTom Plays</div>

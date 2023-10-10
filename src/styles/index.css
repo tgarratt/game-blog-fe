@@ -178,6 +178,22 @@ h1,h2,h3, .heading {
       box-shadow: 0 0 1px rgba(255,255,255,.5);
   }
 
+/* Welcome  */
+
+.animated-text {
+  background: linear-gradient(0.25turn, #28D08A 0%, #2FE1D7 25%, #2B62CC 50%, #2FE1D7 75%, #28D08A 100%);
+  background-size: 400%;
+  outline: none;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: animate 20s linear infinite;
+}
+@keyframes animate {
+  to{
+    background-position: 400%;
+  }
+}
+
 /* Search input */
 
 .dark .search-input {

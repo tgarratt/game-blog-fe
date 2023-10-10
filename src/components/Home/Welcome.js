@@ -16,7 +16,7 @@ function Welcome() {
 
   return (
     <div className='primary-block'>
-    <Welcometext className='py-0 md:py-6 text-4xl md:text-5xl text uppercase'>Welcome to TechTom Plays</Welcometext>
+      <Welcometext className='py-0 md:py-6 text-4xl md:text-5xl text uppercase animated-text'>Welcome to TechTom Plays</Welcometext>
     </div>
   );
 }

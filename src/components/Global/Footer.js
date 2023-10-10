@@ -45,7 +45,7 @@ function Footer() {
           </FooterElement>      
        </div>
        <div className='flex justify-end items-center mt-4 md:mt-0'>
-          <div className='h-[2rem] md:h-[3rem]'>
+          <div className='h-[2rem]'>
             <Logo />
           </div>  
           <div className='text pl-4 text-3xl heading'>TechTom Plays</div>
