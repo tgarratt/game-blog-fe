@@ -121,7 +121,7 @@ function ContentBlock({
                     </ReactMarkdown>
                   </p>
                 </div>
-                <div className="flex">
+                <div className="flex flex-wrap mt-1">
                   {game.attributes.categories.data.map(
                     (category, key) => (
                       <Tag mapKey={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>

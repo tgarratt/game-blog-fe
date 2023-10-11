@@ -59,7 +59,7 @@ function SpotlightBlock({
                   {game.attributes['reviewText'].substring(0, 300)}...
                 </p>
               </div>
-              <div className="flex pt-2">
+              <div className="flex flex-wrap pt-2">
                 {game.attributes.categories.data.map(
                   (category, key) => (
                     <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
