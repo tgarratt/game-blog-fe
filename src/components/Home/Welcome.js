@@ -16,7 +16,7 @@ text-wrap: balance;
 function Welcome() {
 
   return (
-    <div className='primary-block slim'>
+    <div className='primary-block'>
       <Welcometext className='py-0 md:pt-14 text-4xl md:text-5xl text uppercase animated-text'>Welcome to TechTom Plays</Welcometext>
     </div>
   );

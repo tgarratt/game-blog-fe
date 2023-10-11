@@ -15,10 +15,9 @@ h1,h2,h3, .heading {
 }
 
 .primary-block, .secondary-block {
-  padding: 2rem 8rem;
+  padding: 1rem 8rem;
   margin: -1px 0px;
 }
-
 
 @media (max-width: 767px) {
   .primary-block, .secondary-block {

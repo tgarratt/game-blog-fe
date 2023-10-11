@@ -73,7 +73,7 @@ function Search() {
   return (
     <SearchBlock blocktype={'primary'} queryData={searchQuery} searchCategories={searchCategories} direction={'col'}>
       <div className='w-full'>
-        <InputContainer className='pb-1 mb-12 fillable-svg'>
+        <InputContainer className='pb-1 mb-12 mt-4 fillable-svg'>
           <div className='flex justify-between'>
             <SearchInput placeholder='Search...' className='border-2 searchName-input text' value={searchName} onChange={handleInputChange}/>
             <MagnifyingGlass />

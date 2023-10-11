@@ -60,7 +60,7 @@ function ContentBlock({
   const itemsCount = queryData.data?.data.length;
 
   return (
-    <div className={`${blocktype}-block slim`}>
+    <div className={`${blocktype}-block`}>
       <div className="mx-auto px-8" style={{maxWidth: '2000px'}}>
       {header &&
         <div className="flex flex-col md:flex-row mb-8">
