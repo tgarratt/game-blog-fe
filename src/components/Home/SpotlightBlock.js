@@ -34,7 +34,7 @@ function SpotlightBlock({
       {isLoading && <p className="text">Loading...</p>}
       <div className="flex mx-auto" style={{maxWidth: '2000px'}}>
       {isSuccess && 
-          <GamePreview className="mx-2 flex flex-col md:flex-row items-center">
+          <GamePreview className="mx-2 my-4 flex flex-col md:flex-row items-center">
             <ImgContainer className="overflow-auto overflow-hidden rounded-xl w-full">
               <a href={`/review/${game.id}`}>
               <img className="object-cover h-full w-full duration-150 hover:scale-110" alt={'spotlight-reviw-img'} src={`${game.attributes.articleImage.data.attributes.url}`} />
