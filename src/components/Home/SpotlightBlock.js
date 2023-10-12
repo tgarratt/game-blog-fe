@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from 'styled-components';
+import ReactMarkdown from "react-markdown";
 
 import Timer from "../Icons/Timer";
 import Tag from "../Global/Tag";
@@ -56,7 +57,9 @@ function SpotlightBlock({
               </div>
               <div>
                 <p className="w-4/5 text-sm">
-                  {game.attributes['reviewText'].substring(0, 300)}...
+                  <ReactMarkdown>
+                  {game.attributes['reviewText'].substring(0, 300) + "..."}
+                  </ReactMarkdown>
                 </p>
               </div>
               <div className="flex flex-wrap pt-2">
