@@ -49,7 +49,7 @@ function Footer() {
             <div className='h-[2rem]'>
               <Logo />
             </div>  
-            <div className='text pl-4 text-3xl heading'>TechTom Plays</div>
+            <div className='text pl-4 text-3xl heading cursor-default'>TechTom Plays</div>
           </div>
         </div>
       </footer>
