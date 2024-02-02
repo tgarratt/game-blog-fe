@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { styled } from 'styled-components';
 
 import Timer from "../Icons/Timer";
 import Tag from "../Global/Tag";
 import ReactMarkdown from "react-markdown";
-import BackArrows from "../Icons/BackArrows";
-import NextArrows from "../Icons/NextArrows";
+// import BackArrows from "../Icons/BackArrows";
+// import NextArrows from "../Icons/NextArrows";
 
 
 const GamePreview = styled.div`
@@ -31,24 +31,25 @@ function ContentBlock({
   queryData,
   firstBlockSize
 }) {
-  const [primaryReview, setPrimaryReview] = useState(0)
+  // const [primaryReview, setPrimaryReview] = useState(0)
+  const primaryReview = 0
 
   const containerRef = React.useRef(null)
 
-  const scrollForwards = () => {
-    window.scrollTo({ left: containerRef.current.scrollLeft += 700, behavior: 'smooth' })
-    setTimeout(() => {
-      setPrimaryReview(primaryReview + 1);
-    }, 500);     
-  };
+  // const scrollForwards = () => {
+  //   window.scrollTo({ left: containerRef.current.scrollLeft += 700, behavior: 'smooth' })
+  //   setTimeout(() => {
+  //     setPrimaryReview(primaryReview + 1);
+  //   }, 500);     
+  // };
 
-  const scrollBackwards = () => {
-    window.scrollTo({ left: containerRef.current.scrollLeft += -700, behavior: 'smooth' })
-    setTimeout(() => {
-      setPrimaryReview(primaryReview - 1);
-    }, 500);   
+  // const scrollBackwards = () => {
+  //   window.scrollTo({ left: containerRef.current.scrollLeft += -700, behavior: 'smooth' })
+  //   setTimeout(() => {
+  //     setPrimaryReview(primaryReview - 1);
+  //   }, 500);   
 
-  };
+  // };
 
   const calculateReadTime = (text) => {
     const wordCount = text.trim().split(' ').length
@@ -57,7 +58,7 @@ function ContentBlock({
 
   }
 
-  const itemsCount = queryData.data?.data.length;
+  // const itemsCount = queryData.data?.data.length;
 
   return (
     <div className={`${blocktype}-block`}>
@@ -68,7 +69,8 @@ function ContentBlock({
         </div>
       }
 
-      {itemsCount > 2 &&  
+      {/* temp removed as css rem / px was placing differently on chrome and safari causing visual bugs */}
+      {/* {itemsCount > 2 &&  
       <>
         <div className={`hidden lg:flex justify-start relative left-[-4rem] bottom-[-16rem] h-[32px] fillable-svg`}>
           <div className={`${primaryReview === 0 ? 'hidden' : 'h-[28px] hover:h-[32px] duration-500'}`} onClick={scrollBackwards}>
@@ -81,7 +83,7 @@ function ContentBlock({
           </div>
         </div>
       </>
-      }
+      } */}
 
       <div className="flex flex-col lg:flex-row mb-1 lg:mb-20 overflow-hidden scroll-smooth" style={{scrollSnapType: 'x mandatory'}} ref={containerRef}>
         {queryData.isLoading && <p className="text">Loading...</p>}
