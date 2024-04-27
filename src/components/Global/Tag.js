@@ -9,7 +9,7 @@ if(isSelected){
   );
 }
 return (
-  <div key={mapKey} className="text-xs my-1 lg:mt-2 mr-2 rounded-lg w-fit px-2 py-0.5" style={{border: `1px ${colour} solid`}}>{children}</div>
+  <div key={mapKey} className="text-xs my-1 lg:mt-2 mr-2 rounded-lg w-fit px-2 py-0.5 cursor-default" style={{border: `1px ${colour} solid`}}>{children}</div>
 );
 
 }
