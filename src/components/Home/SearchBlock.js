@@ -87,7 +87,7 @@ function SearchBlock({
                       let isSelected = searchCategories.includes(category.attributes.name);
 
                         return (
-                        <Tag key={key} colour={category.attributes.colour} isButtton={true} isSelected={isSelected} >{category.attributes.name}</Tag>
+                        <Tag mapKey={key} colour={category.attributes.colour} isSelected={isSelected} title={category.attributes.name} />
                       )
                     }
                   )}

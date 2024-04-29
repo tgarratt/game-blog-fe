@@ -16,7 +16,7 @@ function Hero({query}) {
                         <div className='flex mb-2 lg:mb-6'>
                             {query.data.data.attributes.categories.data.map(
                             (category, key) => (
-                                <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
+                                <Tag mapKey={key} colour={category.attributes.colour} isLink={true} title={category.attributes.name} />
                             )
                             )}
                         </div>

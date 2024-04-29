@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useQuery } from 'react-query';
 import axios from 'axios';
 
@@ -6,12 +6,14 @@ import { getAllGames } from '../api/Reviews/api';
 import ReviewsResults from '../components/Reviews/ReviewsResults';
 import ReviewsFilter from '../components/Reviews/ReviewsFilter';
 import { getCategories } from '../api/Global/api';
+import { GlobalContext } from '../contexts/GlobalContext';
 
 
 function Reviews() {
   const [orderDir, setOrderBy] = useState('publishedAt:desc');
-  const [filterCategories, setFilterCategories] = useState([]);
   const [filterName, setFilterName] = useState('');
+
+  const {filterCategories, setFilterCategories} = useContext(GlobalContext);
 
   const allGamesQuery = useQuery({
     queryKey: ['getAllGames'],

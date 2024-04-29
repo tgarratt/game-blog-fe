@@ -65,7 +65,7 @@ function SpotlightBlock({
               <div className="flex flex-wrap pt-2">
                 {game.attributes.categories.data.map(
                   (category, key) => (
-                    <Tag key={key} colour={category.attributes.colour}>{category.attributes.name}</Tag>
+                    <Tag mapKey={key} colour={category.attributes.colour} title={category.attributes.name} isLink={true} />
                   )
                 )}
               </div>

@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Nav from './components/Global/Nav';
 import Footer from './components/Global/Footer';
 import Links from './Links';
+import GlobalProvider from './providers/GlobalProvider';
 
 
 function App() {
@@ -28,9 +29,11 @@ function App() {
 
   return (
     <div className={`${theme}`}>
-      <Nav toggleTheme={toggleTheme} theme={theme} />
-        <Links />
-      <Footer />
+      <GlobalProvider>
+        <Nav toggleTheme={toggleTheme} theme={theme} />
+          <Links />
+        <Footer />
+      </GlobalProvider>
     </div>
   );
 }

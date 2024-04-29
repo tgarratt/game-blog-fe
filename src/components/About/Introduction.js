@@ -27,8 +27,8 @@ function Introduction({query}) {
           <div className='text flex w-full mb-5 md:mb-0 md:max-w-[50%]'>
             <div className='flex flex-col justify-center'>
               <div className='flex'>
-                <Tag colour='#15C0A7'>Software Developer</Tag>
-                <Tag colour='#2B62CC'>Game Enthusiast</Tag>
+                <Tag colour='#15C0A7' title="Software Developer" />
+                <Tag colour='#2B62CC' title="Game Enthusiast" />
               </div>
               <h1 className='text text-4xl font-bold pl-1 my-4'>ABOUT</h1>
               <p className='text pl-1 rich-text'>
