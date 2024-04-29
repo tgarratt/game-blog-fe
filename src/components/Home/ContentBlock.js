@@ -6,6 +6,7 @@ import Tag from "../Global/Tag";
 import ReactMarkdown from "react-markdown";
 import BackArrows from "../Icons/BackArrows";
 import NextArrows from "../Icons/NextArrows";
+import GamePreviewPlaceholder from "../Placeholders/GamePreviewPlaceholder";
 
 
 const GamePreview = styled.div`
@@ -32,7 +33,6 @@ function ContentBlock({
   firstBlockSize
 }) {
   const [primaryReview, setPrimaryReview] = useState(0)
-  // const primaryReview = 0
 
   const containerRef = React.useRef(null)
 
@@ -69,7 +69,6 @@ function ContentBlock({
         </div>
       }
 
-      {/* temp removed as css rem / px was placing differently on chrome and safari causing visual bugs */}
       {itemsCount > 2 &&  
       <>
         <div className={`hidden lg:flex justify-start relative left-[-4rem] bottom-[-16rem] h-[32px] fillable-svg`}>
@@ -86,7 +85,7 @@ function ContentBlock({
       }
 
       <div className="flex flex-col lg:flex-row mb-1 lg:mb-20 overflow-hidden scroll-smooth" style={{scrollSnapType: 'x mandatory'}} ref={containerRef}>
-        {queryData.isLoading && <p className="text">Loading...</p>}
+        {queryData.isLoading && <GamePreviewPlaceholder firstWidth={'60%'} secondWidth={'40%'} />}
         {queryData.isSuccess && queryData.data.data.map(
           (game, key) => {
 
